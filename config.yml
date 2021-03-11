@@ -1,0 +1,4 @@
+# Don't commit this file to your repository.
+bot_token: <TOKEN>
+google_service_account_creds: path/to/creds.json
+google_sheets_url: <SHEETS_URL>
