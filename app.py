@@ -3,7 +3,7 @@ import argparse
 import yaml
 import discord
 
-from sheets import SheetManager
+from sheets import MentorshipManager
 from util import ValueRetainingRegexMatcher
 
 
@@ -20,7 +20,7 @@ with open(args.config, 'r') as f:
 BOT_TOKEN = config['bot_token']
 
 GOOGLE_CREDENTIALS_PATH = config['google_service_account_creds']
-GOOGLE_SHEETS_URL = config['google_sheets_url']
+GOOGLE_SHEETS_KEY = config['google_sheets_key']
 
 
 HELP_TEXT = '''\
@@ -39,12 +39,12 @@ class DRBardBot(discord.Client):
 
     def __init__(self):
         super().__init__()
-        self.sheets = SheetManager(self, GOOGLE_CREDENTIALS_PATH)
+        self.mm = MentorshipManager(self, GOOGLE_CREDENTIALS_PATH, GOOGLE_SHEETS_KEY)
 
 
     async def on_ready(self):
         print("Initializing DRBardBot...")
-        await self.sheets.initialize()
+        await self.mm.initialize()
         print('Ready!')
 
 
