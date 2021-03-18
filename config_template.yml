@@ -1,0 +1,7 @@
+# DO NOT ALTER THIS FILE!!!
+# DO NOT PUT SENSITIVE INFORMATION IN HERE!!!
+#
+# Copy this file into secret_settings and modify it there, so it's not made public
+bot_token: <TOKEN>
+google_service_account_creds: path/to/creds.json
+google_sheets_url: <SHEETS_URL>
