@@ -1,0 +1,1 @@
+This directory should have all your credentials and sensitive files in it, as the files will never be version controlled thanks to the .gitignore file.
