@@ -7,6 +7,9 @@ import discord
 from sheets import MentorshipManager
 from util import ValueRetainingRegexMatcher
 
+# replit work-around script to keep the process running
+from keep_alive import keep_alive
+
 
 parser = argparse.ArgumentParser(description='Run the bot.')
 parser.add_argument('--config', type=str, required=True, 
@@ -69,6 +72,7 @@ class DRBardBot(discord.Client):
 
 
 def main():
+    keep_alive()
     client = DRBardBot()
     client.run(BOT_TOKEN)
 
