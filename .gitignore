@@ -1,3 +1,4 @@
 .mailmap
 secret_settings/*
 !secret_settings/README.md
+__pycache__/

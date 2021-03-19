@@ -17,8 +17,7 @@ config = {}
 with open(args.config, 'r') as f:
     config = yaml.safe_load(f)
 
-BOT_TOKEN = config['bot_token']
-
+BOT_TOKEN = config['bot_token'] if 'bot_token' in config else os.getenv("BOT_TOKEN")
 GOOGLE_CREDENTIALS_PATH = config['google_service_account_creds']
 GOOGLE_SHEETS_KEY = config['google_sheets_key']
 
